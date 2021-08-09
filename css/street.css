@@ -236,17 +236,23 @@ header .menuFront .slideMenuFront {
 header .menuFront .slideMenuFront.active {
   right: 0;
 }
+header .menuFront .slideMenuFront .menu{
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* for IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* for Safari */
+}
 header .menuFront .slideMenuFront .menu a {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0.7rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin: auto;
   text-decoration: none;
   font-family: 'Rubik', sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   color: #141618;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #fff;
@@ -288,19 +294,19 @@ header .menuFront .slideMenuFront .menu a:hover {
   background-image: url(../assets/img/collections/menu/1.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid .lightbox.dos {
-  background-image: url(../aasets/img/collections/menu/10.jpg);
+  background-image: url(../aasets/img/collections/menu/2.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid .lightbox.tres {
-  background-image: url(../assets/img/collections/menu/8.jpg);
+  background-image: url(../assets/img/collections/menu/3.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid .lightbox.cuatro {
-  background-image: url(../assets/img/collections/menu/7.jpg);
+  background-image: url(../assets/img/collections/menu/4.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid .lightbox.cinco {
-  background-image: url(../assets/img/collections/menu/6.jpg);
+  background-image: url(../assets/img/collections/menu/5.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid .lightbox.seis {
-  background-image: url(../assets/img/collections/coolstuffs/2.jpg);
+  background-image: url(../assets/img/collections/coolstuffs/6.jpg);
 }
 .mainPictures .containerPolaroid .picture .polaroid:hover {
   transform: scale(1.15, 1.15);

@@ -234,17 +234,23 @@ header .menuFront .slideMenuFront {
 header .menuFront .slideMenuFront.active {
   right: 0;
 }
+header .menuFront .slideMenuFront .menu{
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* for IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* for Safari */
+}
 header .menuFront .slideMenuFront .menu a {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0.7rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  margin: auto;
   text-decoration: none;
   font-family: 'Rubik', sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   color: #141618;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #fff;
