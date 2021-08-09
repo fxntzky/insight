@@ -1,0 +1,1 @@
+$(document).ready((function(){var o=$("#menuFixed");$(window).on("scroll",(function(){var n=$("#disclaimer").offset().top;$(window).scrollTop()>=n/2&&o.css("margin-top",0)}))}));

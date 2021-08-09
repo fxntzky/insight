@@ -1,0 +1,544 @@
+/*-------------------------------------*/
+/*COLORS*/
+/*-------------------------------------*/
+/*Colores*/
+/*-------------------------------------*/
+/*GENERALS*/
+/*-------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+body {
+  font-size: 15px;
+  font-family: din-condensed, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  vertical-align: middle;
+}
+/*-------------------------------------*/
+/* LOADER */
+/*-------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 11;
+  pointer-events: none;
+}
+.preloader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  height: 300px;
+}
+.preloader .top {
+  background-color: #000000;
+  width: 100%;
+  height: 50vh;
+  background-image: url(https://media.giphy.com/media/wKdhNIa7jvnj7tbFTx/giphy-downsized.gif);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.preloader .bottom {
+  background-color: #000000;
+  width: 100%;
+  height: 50vh;
+  background-image: url(https://media.giphy.com/media/wKdhNIa7jvnj7tbFTx/giphy-downsized.gif);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.preloaderFinishTop {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: top 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderTextFinishTop {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: top 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderFinishBottom {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: bottom 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderImg {
+  opacity: 0;
+}
+/*-------------------------------------*/
+/* TOGGLE */
+/*-------------------------------------*/
+.switch {
+  position: absolute;
+  left: 36px;
+  top: 34px;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.Slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border-radius: 50px;
+  -webkit-transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  box-shadow: 0 0 2px #fff;
+}
+.Slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  box-shadow: 0px 0px 6px 0 #fff, 1px 1px 6px 0 #000;
+  border-radius: 50%;
+  -webkit-transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.Slider:before::after {
+  box-shadow: inset 0px 0px 15px 0 #fff, 1px 1px 6px 0 #000;
+}
+input:checked + .Slider {
+  background-color: rgba(255, 251, 251, 0.15);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+input:focus + .Slider {
+  box-shadow: 0 0 2px #fff;
+}
+input:checked + .Slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+/*-------------------------------------*/
+/* HEADER */
+/*-------------------------------------*/
+header .menu-pc {
+  background-color: #dddddd;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 0;
+  padding-top: 2vh;
+}
+header .menu-pc .menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 300px;
+  align-items: center;
+  margin: auto;
+  padding-left: 1.5rem;
+}
+header .menu-pc .menu .logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header .menu-pc .menu .logo img {
+  width: 50px;
+  display: block;
+}
+header .menu-pc .menu a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase ;
+  font-size: 15px;
+}
+header .menu-pc .menu a:hover {
+  color: #fff;
+}
+header .menuFront .menuButton {
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 110;
+  top: 34px;
+  right: 36px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header .menuFront .slideMenuFront {
+  position: fixed;
+  z-index: 109;
+  top: 0;
+  right: -100%;
+  background: #141618;
+  padding: 1.25rem 2.25rem;
+  padding-top: 100px;
+  width: 100%;
+  height: 100vh;
+}
+header .menuFront .slideMenuFront.active {
+  right: 0;
+}
+header .menuFront .slideMenuFront .menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.7rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 80px;
+  color: #141618;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+header .menuFront .slideMenuFront .menu a:hover {
+  color: #fff;
+}
+/*-------------------------------------*/
+/* VIDEO SECTION */
+/*-------------------------------------*/
+.playlists {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  flex: 1 1 auto;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.playlists .lofi {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-image: url(../assets/img/lofi/lofi);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.playlists .lofi h2 {
+  display: block;
+  color: #fff;
+  font-size: 100px;
+}
+.playlists .lofi h2:hover {
+  font-size: 75px;
+  transition: all 0.5 s ease;
+}
+.playlists .high {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  position: relative;
+  height: 100%;
+  background: #c2c1c1;
+  background-image: url(../assets/img/lofi/hihg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.playlists .high h2 {
+  color: #fff;
+  font-size: 100px;
+}
+.playlists .high h2:hover {
+  font-size: 75px;
+  transition: all 0.5 s ease;
+}
+/*-------------------------------------*/
+/* FOOTER */
+/*-------------------------------------*/
+footer {
+  width: 100%;
+  margin-top: auto;
+  height: 10vh;
+}
+footer .center-footer {
+  background-color: #c2c1c1;
+}
+footer .center-footer .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-end;
+}
+footer .center-footer .widget {
+  display: inline-block;
+  padding: 18px;
+}
+footer .center-footer .widget a {
+  text-decoration: none;
+  color: black;
+  font-size: 35px;
+  text-align: center;
+}
+footer .center-footer .widget a:hover {
+  color: #fff;
+}
+footer .bottom-footer {
+  background-color: #c2c1c1;
+  height: 15px;
+  font-size: 15px;
+}
+footer .bottom-footer p {
+  text-align: center;
+  margin: auto;
+  font-size: 12px;
+}
+.mobileFooter {
+  display: none;
+  align-content: flex-end;
+}
+/*-------------------------------------*/
+/* Animations */
+/*-------------------------------------*/
+@keyframes top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+/*-------------------------------------*/
+/* dark mode */
+/*-------------------------------------*/
+html[data-theme='dark'] header .menu-pc {
+  background-color: #212124;
+}
+html[data-theme='dark'] header .menu-pc .menu a {
+  color: #fff;
+}
+html[data-theme='dark'] footer {
+  color: #fff;
+}
+html[data-theme='dark'] footer .widget h5 {
+  color: #fff;
+}
+html[data-theme='dark'] .containerVideo {
+  background-color: #212124;
+}
+html[data-theme='dark'] footer .center-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] footer .bottom-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] .mobileFooter .center-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] .mobileFooter .bottom-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] .mobileFooter .center-footer .container .widget a i {
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .switch {
+    display: none;
+  }
+  header .menu-pc {
+    background-color: #212124;
+  }
+  header .menu-pc .menu a {
+    color: #fff;
+  }
+  footer {
+    color: #fff;
+  }
+  footer .widget h5 {
+    color: #fff;
+  }
+  .containerVideo {
+    background-color: #212124;
+  }
+  footer .center-footer {
+    background-color: #212124;
+  }
+  footer .bottom-footer {
+    background-color: #212124;
+  }
+  .mobileFooter .center-footer {
+    background-color: #212124;
+  }
+  .mobileFooter .bottom-footer {
+    background-color: #212124;
+  }
+  .mobileFooter .center-footer .container .widget a i {
+    color: #fff;
+  }
+}
+/*-------------------------------------*/
+/* media querry */
+/*-------------------------------------*/
+@media all and (max-width: 550px) {
+  .containerMerch .container .picture {
+    float: none;
+    width: 100%;
+    justify-content: center;
+  }
+  header .menuFront .menuButton {
+    right: 7px;
+  }
+}
+@media all and (max-width: 770px) {
+  header .menu-pc .menu {
+    padding-top: 2px;
+    padding-bottom: 5px;
+  }
+  header .menu-pc .menu .logo img {
+    width: 35px;
+  }
+  header .menuFront .menuButton {
+    top: 10px;
+  }
+  header .menuFront .slideMenuFront .menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 40px;
+    color: #141618;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+  }
+  header .menuFront .slideMenuFront .menu a:hover {
+    color: #fff;
+  }
+  .mainFooter {
+    display: none;
+  }
+  .mobileFooter {
+    display: inline-block;
+  }
+  .mobileFooter .center-footer .container .widget a {
+    display: inline-block;
+  }
+  .mobileFooter .bottom-footer {
+    padding-top: 0;
+  }
+}
+@media all and (max-width: 700px) {
+  .mainfooter .center-footer .container .widget a h5 {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .mobileFooter .center-footer .container .widget a i {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .playlists {
+    width: 100%;
+    height: 100%;
+  }
+  .playlists .lofi {
+    width: 100%;
+    height: 50%;
+  }
+  .playlists .lofi H2 {
+    font-size: 80px;
+  }
+  .playlists .lofi H2:hover {
+    font-size: 60px;
+  }
+  .playlists .high {
+    width: 100%;
+    height: 50%;
+  }
+  .playlists .high H2 {
+    font-size: 80px;
+  }
+  .playlists .high H2:hover {
+    font-size: 75px;
+    transition: all 0.5 s ease;
+  }
+  .switch {
+    left: 5px;
+    top: 3.5vh;
+  }
+  .menu-pc {
+    padding-top: 2.5vh;
+  }
+  header .menuFront .menuButton {
+    top: 3.5vh;
+  }
+}
+/*# sourceMappingURL=lofiplay.css.map */

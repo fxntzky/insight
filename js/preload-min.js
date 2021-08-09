@@ -1,0 +1,1 @@
+window.addEventListener("load",(()=>{document.querySelector(".top").classList.add("preloaderFinishTop"),document.querySelector(".img").classList.add("preloaderImg"),document.querySelector(".textTop").classList.add("preloaderTextFinishTop"),document.querySelector(".bottom").classList.add("preloaderFinishBottom")}));

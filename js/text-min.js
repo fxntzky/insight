@@ -1,0 +1,1 @@
+document.querySelectorAll(".text").forEach((e=>{e.addEventListener("click",(()=>{e.classList.toggle("active")}))}));

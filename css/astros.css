@@ -1,0 +1,662 @@
+/*-------------------------------------*/
+/*COLORS*/
+/*-------------------------------------*/
+/*Colores*/
+/*-------------------------------------*/
+/*GENERALS*/
+/*-------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+body {
+  font-size: 15px;
+  font-family: din-condensed, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+/*-------------------------------------*/
+/* LOADER */
+/*-------------------------------------*/
+.preloader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  pointer-events: none;
+}
+.preloader img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  height: 300px;
+}
+.preloader .top {
+  background-color: #000000;
+  width: 100%;
+  height: 50vh;
+  background-image: url(https://media.giphy.com/media/mCh8FqWWMOUjpM2T32/giphy.gif);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.preloader .bottom {
+  background-color: #000000;
+  width: 100%;
+  height: 50vh;
+  background-image: url(https://media.giphy.com/media/mCh8FqWWMOUjpM2T32/giphy.gif);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.preloaderFinishTop {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: top 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderTextFinishTop {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: top 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderFinishBottom {
+  -webkit-animation: top 4.5s ease;
+  will-change: auto;
+  animation: bottom 4.5s ease;
+  transition-delay: 2.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.preloaderImg {
+  opacity: 0;
+}
+/*-------------------------------------*/
+/* TOGGLE */
+/*-------------------------------------*/
+.switch {
+  position: absolute;
+  left: 55px;
+  top: 50%;
+  transform: translate(-35px, -50%);
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.Slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border-radius: 50px;
+  -webkit-transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  box-shadow: 0 0 2px #fff;
+}
+.Slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  box-shadow: 0px 0px 6px 0 #fff, 1px 1px 6px 0 #000;
+  border-radius: 50%;
+  -webkit-transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: 0.2s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.Slider:before::after {
+  box-shadow: inset 0px 0px 15px 0 #fff, 1px 1px 6px 0 #000;
+}
+input:checked + .Slider {
+  background-color: rgba(255, 251, 251, 0.15);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+input:focus + .Slider {
+  box-shadow: 0 0 2px #fff;
+}
+input:checked + .Slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+/*-------------------------------------*/
+/* HEADER */
+/*-------------------------------------*/
+header .menu-pc {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  background-color: #c2c1c1 0.5;
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  width: 100%;
+  margin-bottom: 0;
+  box-shadow: 0px 9px 32px -1px rgba(0, 0, 0, 0.15);
+}
+header .menu-pc .menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 300px;
+  align-items: center;
+  margin: auto;
+  padding-left: 0.9rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+header .menu-pc .menu .logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header .menu-pc .menu .logo img {
+  width: 50px;
+  display: block;
+}
+header .menu-pc .menu a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase ;
+  font-size: 16px;
+}
+header .menu-pc .menu a:hover {
+  color: #fff;
+}
+header .menuFront .menuButton {
+  display: block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 110;
+  top: 22px;
+  right: 25px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+header .menuFront .slideMenuFront {
+  position: fixed;
+  z-index: 109;
+  top: 0;
+  right: -100%;
+  background: #141618;
+  padding: 1.25rem 2.25rem;
+  padding-top: 100px;
+  width: 100%;
+  height: 100vh;
+}
+header .menuFront .slideMenuFront.active {
+  right: 0;
+}
+header .menuFront .slideMenuFront .menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.7rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 80px;
+  color: #141618;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+header .menuFront .slideMenuFront .menu a:hover {
+  color: #fff;
+}
+/*-------------------------------------*/
+/* PICTURE SECTION */
+/*-------------------------------------*/
+.shop .banner .container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.shop .banner .container .wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/astros/dress);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #1abdc4;
+}
+.shop .colectionPlanets {
+  width: 100%;
+  height: 100vh;
+  min-width: 200px;
+}
+.shop .colectionPlanets .square {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  float: left;
+  width: 33.33%;
+  height: 46.5vh;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-size: 650px;
+  background-position: center;
+}
+.shop .colectionPlanets .square img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.shop .colectionPlanets .square.uno {
+  background-image: url(../assets/img/astros/tshirtsHD/moon.png);
+}
+.shop .colectionPlanets .square.dos {
+  background-image: url(../assets/img/astros/hoodiesMinimal/redHoodie.png);
+}
+.shop .colectionPlanets .square.tres {
+  background-image: url(../assets/img/astros/tshirtsHD/mars.png);
+}
+.shop .colectionPlanets .square.cuatro {
+  background-image: url(../assets/img/astros/hoodiesMinimal/blackHoodie.png);
+}
+.shop .colectionPlanets .square.cinco {
+  background-image: url(../assets/img/astros/tshirtsHD/plastic.png);
+}
+.shop .colectionPlanets .square.seis {
+  background-image: url(../assets/img/astros/hoodiesMinimal/oliveHoodie.jpg);
+}
+.shop .colectionPlanets .square.siete {
+  background-image: url(../assets/img/astros/tshirtsHD/jupiter.png);
+}
+.shop .colectionPlanets .square.ocho {
+  background-image: url(../assets/img/astros/hoodiesMinimal/seaHoodie.png);
+}
+.shop .colectionPlanets .square.nueve {
+  background-image: url(../assets/img/astros/tshirtsHD/venus.png);
+}
+.shop .colectionPlanets .square.diez {
+  background-image: url(../assets/img/astros/hoodiesMinimal/sandHoodie.png);
+}
+.shop .colectionPlanets .square.once {
+  background-image: url(../assets/img/astros/tshirtsHD/mercury.png);
+}
+.shop .colectionPlanets .square.doce {
+  background-image: url(../assets/img/astros/hoodiesMinimal/stoneHoodie.png);
+}
+.shop .colectionPlanets .square.trece {
+  background-image: url(../assets/img/astros/tshirtsHD/saturn.png);
+}
+.shop .colectionPlanets .square.catorce {
+  background-image: url(../assets/img/astros/hoodiesMinimal/coffeeHoodie.png);
+}
+.shop .colectionPlanets .square.quince {
+  background-image: url(../assets/img/astros/tshirtsHD/sun.png);
+}
+.shop .colectionPlanets .square:hover {
+  background-size: 750px;
+  transition: all 0.35s;
+}
+/*-------------------------------------*/
+/* SCROLL ARROW */
+/*-------------------------------------*/
+.arrow {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  z-index: 110;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 55px;
+}
+.arrow a {
+  color: #fff;
+  text-decoration: none;
+}
+.arrow a:hover {
+  color: #141618;
+}
+/*-------------------------------------*/
+/* FOOTER */
+/*-------------------------------------*/
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+footer .center-footer {
+  background-color: #c2c1c1;
+}
+footer .center-footer .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-end;
+  height: 440px;
+  background-image: url(../assets/img/footer/mandalefooter.png);
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+footer .center-footer .container .widget {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+footer .center-footer .container .widget a {
+  text-decoration: none;
+  color: black;
+  font-size: 35px;
+  text-align: center;
+}
+footer .center-footer .container .widget a:hover {
+  color: #fff;
+}
+footer .bottom-footer {
+  background-color: #c2c1c1;
+  height: 15px;
+  font-size: 15px;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+footer .bottom-footer p {
+  font-family: din-condensed, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin: auto;
+  font-size: 14px;
+  cursor: default;
+}
+.mobileFooter {
+  display: none;
+  align-content: flex-end;
+}
+/*-------------------------------------*/
+/* LIGHTBOX */
+/*-------------------------------------*/
+.imagen-modal {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.imagen-modal + i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #141618;
+  background-color: #fff;
+  display: inline-block;
+  cursor: pointer;
+}
+/*-------------------------------------*/
+/* Animations */
+/*-------------------------------------*/
+@keyframes top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes bottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+@keyframes transitionIn {
+  from {
+    filter: brightness(50.75);
+  }
+  to {
+    filter: none;
+  }
+}
+/*-------------------------------------*/
+/* Dark Mode */
+/*-------------------------------------*/
+html[data-theme='dark'] * h5 {
+  color: #fff;
+}
+html[data-theme='dark'] * p {
+  color: #fff;
+}
+html[data-theme='dark'] header .menu-pc {
+  background-color: #212124 0.5;
+}
+html[data-theme='dark'] header .menu-pc .menu a {
+  color: #fff;
+}
+html[data-theme='dark'] header .menu-pc .menu a:hover {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+}
+html[data-theme='dark'] header .menu-pc {
+  background-color: #212124 0.8;
+}
+html[data-theme='dark'] footer .center-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] footer .center-footer .widget a i {
+  color: #fff;
+}
+html[data-theme='dark'] footer .bottom-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] .mobileFooter .center-footer {
+  background-color: #212124;
+}
+html[data-theme='dark'] .mobileFooter .bottom-footer {
+  background-color: #212124;
+}
+@media (prefers-color-scheme: dark) {
+  * h5 {
+    color: #fff;
+  }
+  * p {
+    color: #fff;
+  }
+  .switch {
+    display: none;
+  }
+  header .menu-pc {
+    background-color: #212124 0.5;
+  }
+  header .menu-pc .menu a {
+    color: #fff;
+  }
+  header .menu-pc .menu a:hover {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+  }
+  header .menu-pc {
+    background-color: #212124 0.8;
+  }
+  footer .center-footer {
+    background-color: #212124;
+  }
+  footer .bottom-footer {
+    background-color: #212124;
+  }
+  mobileFooter .center-footer {
+    background-color: #212124;
+  }
+  mobileFooter .bottom-footer {
+    background-color: #212124;
+  }
+}
+@media all and (min-width: 1400px) {
+  .containerMerch .container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .containerMerch .container .picture {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .containerMerch .container .picture img {
+    max-width: 400px;
+  }
+  .containerMerch .container .polaroid {
+    max-width: 400px;
+  }
+}
+@media all and (max-width: 1400px) {
+  .containerMerch .container .picture img {
+    max-width: 300px;
+  }
+  .containerMerch .container .polaroid {
+    max-width: 250px;
+  }
+}
+@media all and (max-width: 950px) {
+  .shop .banner .container .colLeft {
+    width: 100%;
+    background-image: url(../assets/img/astros/DRESSmobile.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+  }
+  .shop .banner .container .colRight {
+    display: none;
+  }
+  .shop .categories .square {
+    width: 100%;
+  }
+}
+@media all and (max-width: 770px) {
+  .mainFooter {
+    display: none;
+  }
+  .mobileFooter {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 700px) {
+  .mainfooter .center-footer .container .widget a h5 {
+    font-size: 17px;
+    padding: 0;
+    margin: 0;
+  }
+  .mobileFooter .center-footer .container .widget a i {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .switch {
+    left: 35px;
+  }
+  .arrow {
+    bottom: 55px;
+    right: 14px;
+  }
+}
+@media all and (max-width: 550px) {
+  .shop .banner .container .colLeft {
+    width: 100%;
+    background-image: url(../assets/img/astros/DRESSmobile.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .shop .banner .container .colRight {
+    display: none;
+  }
+  .shop .colectionPlanets .square {
+    width: 100%;
+  }
+  header .menuFront .menuButton {
+    right: 7px;
+  }
+}
+@media all and (max-width: 500px) {
+  .mainfooter .center-footer .container .widget a h5 {
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+  }
+  header .menuFront .slideMenuFront .menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 40px;
+    color: #141618;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+  }
+  header .menuFront .slideMenuFront .menu a:hover {
+    color: #fff;
+  }
+}
+/*# sourceMappingURL=astros.css.map */

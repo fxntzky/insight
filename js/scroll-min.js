@@ -1,0 +1,1 @@
+$(document).ready((function(){$("#scroll").on("click",(function(o){o.preventDefault(),0!=$(window).scrollTop()&&$("html,body").animate({scrollTop:0},1500)}))}));

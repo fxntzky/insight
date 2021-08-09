@@ -1,0 +1,1 @@
+$(document).ready((function(){var t=!1;$("#menuButton").click((function(){t?$("#menuButton").css({transform:"rotate(90deg)"}):$("#menuButton").css({transform:"rotate(45deg)"}),t=!t}))}));

@@ -1,0 +1,10 @@
+On localhost this will work:
+
+RewriteEngine on
+RewriteBase /rectangle/
+But whenever we are in live server we must use this
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.sunrisecoachingcenter\.com$ [NC]
+RewriteRule ^(.*)$ http://sunrisecoachingcenter.com/$1 [L,R=301]
+AddType image/svg+xml .svg

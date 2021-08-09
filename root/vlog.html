@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no ">
+    <link rel="stylesheet" href="../css/vlog.css">
+    <title>INSIGHT</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<link rel='shortcut icon' type='image/x-icon' href="../assets/img/menu/favicon.ico">
+	<link rel="stylesheet" href="https://use.typekit.net/ltq0civ.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap" rel="stylesheet">
+	<link href='https://css.gg/add.css' rel='stylesheet'>
+	<link href='https://css.gg/play-track-prev.css' rel='stylesheet'>
+	<link href='https://css.gg/play-track-next.css' rel='stylesheet'>
+	<link href="https://vjs.zencdn.net/4.3.0/video-js.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+		<!-- PRELOADER -->
+    	<div class="preloader">
+    		<div class="img"></div>
+    		<div class="top"></div>
+    		<div class="textTop"></div>
+    		<div class="bottom"></div>
+    	</div>
+
+	<!-- HEADER -->
+    <header>
+		<div class="menu-pc">
+
+			<nav class="menu">
+				<label class="switch"  for="switch">
+					<input type="checkbox" id="switch" name="theme" >
+					<span class="Slider"></span>
+				  </label>
+				  <button type="button" data-action="prev"><i class="gg-play-track-prev"></i></button>
+				<button class="logo">
+					<a href="../index.html"> <IMG src="../assets/img/menu/logo.png" alt="LOGO"></a>
+					</button>
+				<button type="button" data-action="next"><i class="gg-play-track-next"></i></button>  
+			</nav>
+
+		</div>
+
+		<div class="menuFront">
+			<button class="menuButton" id="menuButton">
+				<i id="menuFront" class="gg-add"></i>
+			</button>
+			
+	
+			<div class="slideMenuFront" id="slideMenuFront">
+				<nav class="menu">
+					<a href="../index.html">INSIGHT</a>
+					<a href="./astros.html">AS7ROS</a>
+					<a href="./lofiplay.html">LO FI HIGH VIBES</a>	
+					<a href="./streetpic.html">STREET PIC</a>
+	
+				</nav>
+			</div>
+	
+		  
+	
+		</div>
+
+    </header> 
+
+    <!-- VIDEO SECTION -->  
+    <main class="containerVideo">	
+ 
+		<video id="video" class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9" 
+		controls data-setup="" width="100%" height="100%"></video>
+		<script src="https://vjs.zencdn.net/4.3.0/video.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="../plugins/videojs-playlists.js"></script>
+		
+
+		<script>
+		var videos = [	
+		{ 
+			src : [
+				'../assets/vid/song3.mp4'
+			],
+			poster : '',
+			title : 'AntesDelSol'
+			},
+
+			{
+			src : [
+				'../assets/vid/vlog3.mp4'
+			],
+			poster : '',
+			title : 'Vlog3'
+			},
+
+			{
+			src : [
+				
+				'../assets/vid/song2.mp4'
+			],
+			poster : '',
+			title : 'aoNuevoEnEilat'
+			},
+
+			{
+			src : [
+				
+				'../assets/vid/vlog2.mp4'
+			],
+			poster : '',
+			title : 'Vlog2'
+			},
+
+			{
+			src : [
+				
+				'../assets/vid/song1.mp4'
+			],
+			poster : '',
+			title : 'fuckYouth'
+			},
+
+			{
+			src : [
+				
+				'../assets/vid/vlog1.mp4'
+			],
+			poster : '',
+			title : 'Vlog1'
+			}
+			
+		];
+		var player = videojs('video');
+		player.playList(videos, {
+			getVideoSource: function(vid, cb) {
+			cb(vid.src, vid.poster);
+			}
+		});
+		$('[data-action=prev]').on('click', function(e) {
+			player.prev();
+		});
+		$('[data-action=next]').on('click', function(e) {
+			player.next();
+		});
+		</script>
+	</main>	
+
+
+	<!-- FOOTER -->
+		<footer class="mainFooter" >
+			<main class="mainfooter">
+	
+				<div class="center-footer">
+					<div class="container">
+	
+					   <div class="widget">
+							<a href="./lofiplay.html" target="_blank">
+								<h5>LO FI HIGH VIBES</h5>
+							</a>
+						</div> 
+	
+						<div class="widget">
+							<a href="./streetpic.html" target="_blank">
+								<h5>STREET PIC</h5>
+							</a>
+						</div>
+	
+						<div class="widget">
+							<a href="./astros.html" target="_blank">
+								<h5>AS7ROS</h5>
+							</a>
+						</div>
+	
+						<div class="widget">
+							<a href="./vlog.html" target="_blank">
+								<h5>VLOG DOCUMENTAL</h5>
+							</a>
+						</div>
+						
+					</div>
+				</div>
+	
+				<div class="bottom-footer">
+					<p>&copy;2020 ALL RIGHTS RESERVED</p>
+				</div>
+			</main>
+		</footer> 
+
+	<!-- FOOTER -->
+	<footer class="mobileFooter" >
+		<main class="mainfooter">
+
+
+			<div class="center-footer">
+				<div class="container">
+					
+
+					<div class="widget">
+						<a href="../root/lofiplay.html" target="_blank">
+							<i class="fas fa-headphones"></i>
+						</a>
+					</div>
+
+					<div class="widget">
+						<a href="../root/streetpic.html" target="_blank">
+							<i class="fas fa-camera-retro"></i>
+						</a>
+					</div>
+
+					<div class="widget">
+						<a href="../root/astros.html" target="_blank">
+							<i class="fas fa-tshirt"></i>
+						</a>
+					</div>
+
+					<div class="widget">
+						<a href="../root/vlog.html" target="_blank">
+							<i class="fas fa-tv"></i>
+						</a>
+					</div> 
+
+				
+					
+					
+				</div>
+			</div>
+
+			<div class="bottom-footer">
+				<p>&copy;ALL RIGHTS RESERVED</p>
+			</div>
+		</main>
+	</footer> 
+    
+	<script src="../js/dark-min.js"></script>
+	<script src="../js/preload-min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="../js/menufront-min.js"></script>
+	<script src="../js/button-min.js"></script>
+	<script src="https://kit.fontawesome.com/9edf12186d.js" crossorigin="anonymous"></script>	
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+$(document).ready((function(){var o=$("#arrow");$(window).on("scroll",(function(){var n=$("#news").offset().top;$(window).scrollTop()>=n?o.css("margin-right",0):$(window).scrollTop()<=n&&o.css("margin-right","-120px")})),(o=$("#arrow")).on("click",(function(o){o.preventDefault(),0!=$(window).scrollTop()&&$("html,body").animate({scrollTop:0},1500)}))}));
